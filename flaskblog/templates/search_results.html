@@ -15,7 +15,33 @@
                         {% endfor %}
                     </div>
                 {% else %}
-                    {{ form.name(class="form-control form-control-lg") }}
+                    {{ form.name(class="form-control form-control-lg",placeholder="e.g Enter your name") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.year.label(class="form-control-label") }}
+                {% if form.year.errors %}
+                    {{ form.year(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.year.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.year(class="form-control form-control-lg",placeholder="e.g 2015") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.exam.label(class="form-control-label") }}
+                {% if form.exam.errors %}
+                    {{ form.exam(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.exam.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.exam(class="form-control form-control-lg",placeholder="e.g CSEE or ACSEE") }}
                 {% endif %}
             </div>
             <div class="form-group">
@@ -28,7 +54,7 @@
                         {% endfor %}
                     </div>
                 {% else %}
-                    {{ form.student_number(class="form-control form-control-lg") }}
+                    {{ form.student_number(class="form-control form-control-lg",placeholder="e.g s0189/0001") }}
                 {% endif %}
             </div>
         </fieldset>

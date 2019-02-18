@@ -11,9 +11,9 @@ import pandas as pd
 posts = Blueprint('posts', __name__)
 
 
-def numberToResult(iNumber):
+def numberToResult(iNumber, iYear, iExam):
     iSchoolnumber = iNumber[:5].lower()
-    iLink = "https://matokeo.necta.go.tz/csee/results/{}.htm".format(iSchoolnumber)
+    iLink = "https://necta.go.tz/results/{year}/{exam}/results/{number}.htm".format(year=iYear, exam=iExam, number=iSchoolnumber)
     request = requests.get(iLink)
     content = request.content
     soup = BeautifulSoup(content, "html.parser")
@@ -53,7 +53,7 @@ def new_search():
     form = SearchForm()
     if form.validate_on_submit():
         name = form.name.data.upper()
-        result = numberToResult(form.student_number.data)
+        result = numberToResult(form.student_number.data, form.year.data, form.exam.data.lower())
         flash(f"Dear { name },if your number is { name },then below are your results", 'success')
         return render_template('result.html', title='Preview results',
                                name=name, result=result, legend='Preview Results')
