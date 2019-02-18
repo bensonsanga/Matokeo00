@@ -26,11 +26,15 @@ def numberToResult(iNumber, iYear, iExam):
     studentDivision = studentResults[3].text
     studentGrades = studentResults[4].text
 
+    report = soup.find_all("p")
+    schoolReport = report[1].text
+
     return{
         'studentNumber': studentNumber,
         'studentDivision': studentDivision,
         'studentDivisionPoint': studentDivisionPoint,
-        'studentGrades': studentGrades
+        'studentGrades': studentGrades,
+        'schoolReport': schoolReport
     }
 
 
