@@ -58,7 +58,7 @@ def new_search():
     if form.validate_on_submit():
         name = form.name.data.upper()
         result = numberToResult(form.student_number.data, form.year.data, form.exam.data.lower())
-        flash(f"Dear { name },if your number is { name },then below are your results", 'success')
+        flash(f"Dear { name },if your number is { form.student_number.data },then below are your results", 'success')
         return render_template('result.html', title='Preview results',
                                name=name, result=result, legend='Preview Results')
 

@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class="content-section">
-        <h1>Something went wrong (500)</h1>
-        <p>We're experiencing some trouble on our end. Please try again in the near future</p>
+        <h1>Your results could not be found(500)</h1>
+        <p>Please recheck your student number and try again. Or get in touch with our help desk</p>
+        <a class="navbar-brand mr-4" href="{{ url_for('posts.new_search') }}"><p>Back to Search</p></a>
     </div>
 {% endblock content %}
