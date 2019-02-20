@@ -1,0 +1,6 @@
+{
+    "SECRET_KEY" : "17f7be30477de40cce014c700edc75e4",
+    "SQLALCHEMY_DATABASE_URI": "sqlite:///site.db",
+    "MAIL_USERNAME" : "benson.s.sanga@gmail.com",
+    "MAIL_PASSWORD" : "3HakunaMatata7"
+}
