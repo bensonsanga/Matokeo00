@@ -1,12 +1,38 @@
+<script type="text/javascript">
+    function printDiv(divName) {
+        var originalContents = document.body.innerHTML;
+        var para = document.createElement("h1");
+        var node = document.createTextNode("Matokeo Online");
+        para.appendChild(node);
+
+        var para1 = document.createElement("p");
+        var node1 = document.createTextNode("The above results where obtain from MatokeoOnline");
+        para1.appendChild(node1);
+
+        var element = document.getElementById(divName);
+        element.appendChild(para);
+        element.appendChild(para1);
+        var printContents = document.getElementById(divName).innerHTML;
+
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+}
+</script>
+
 {% extends "layout.html" %}
 {% block content %}
-  <div class="card border-dark mb-3" style="max-width: 18rem;">
-    <div class="card-header">{{ result.studentNumber }}</div>
-    <div class="card-body text-success">
-      <h2 class="card-title">{{ name }}</h2>
-      <h5 class="card-title">Division {{ result.studentDivision }} point {{ result.studentDivisionPoint }}</h5>
-      <p class="card-text">{{ result.studentGrades }}</p>
-      <small class="text-muted">{{ result.schoolReport }}</small>
+<div id="printableArea" class="divToPrint">
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header">{{ result.studentNumber }}</div>
+        <div class="card-body text-success">
+          <h2 class="card-title">{{ name }}</h2>
+          <h5 class="card-title">Division {{ result.studentDivision }} point {{ result.studentDivisionPoint }}</h5>
+          <p class="card-text">{{ result.studentGrades }}</p>
+          <small class="text-muted">{{ result.schoolReport }}</small><br>
+          <button class="btn btn-outline-success" onclick="printDiv('printableArea')">Print</button>
+        </div>
     </div>
-  </div>
+</div>
+
 {% endblock content %}
