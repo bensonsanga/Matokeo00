@@ -78,3 +78,8 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+.rounded{
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 25px;
+}
