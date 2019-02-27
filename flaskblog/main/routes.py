@@ -15,3 +15,8 @@ def home():
 @main.route("/about")
 def about():
     return render_template('landing.html', title='About')
+
+
+@main.route("/stats")
+def stats():
+    return render_template('charts.html', title='About')

@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block content %}
+    <link rel="stylesheet" href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="{{url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css')}}">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/fontastic.css')}}">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/grasp_mobile_progress_circle-1.0.0.min.css')}}">
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="{{url_for('static', filename='vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css')}}">
+    <!-- theme stylesheet-->
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/custom.css')}}">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.ico')}}">
+    <div class="breadcrumb-holder">
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('main.home') }}">Matokeo</a></li>
+            <li class="breadcrumb-item active">Charts       </li>
+          </ul>
+        </div>
+      </div>
+      <section class="charts">
+        <div class="container-fluid">
+          <!-- Page Header-->
+          <header>
+            <h1 class="h3 display">Charts</h1>
+          </header>
+          <div class="row">
+            <div class="col-lg-6 m-2 m-2">
+              <div class="card line-chart-example">
+                <div class="card-header d-flex align-items-center">
+                  <h4>Natioanal Performance yearly</h4>
+                </div>
+                <div class="card-body">
+                  <canvas id="lineChartExample"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 m-2">
+              <div class="card bar-chart-example">
+                <div class="card-header d-flex align-items-center">
+                  <h4>Division performances</h4>
+                </div>
+                <div class="card-body">
+                  <canvas id="barChartExample"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 m-2">
+              <div class="card pie-chart-example">
+                <div class="card-header d-flex align-items-center">
+                  <h4>Regions perfoimances</h4>
+                </div>
+                <div class="card-body">
+                  <div class="chart-container">
+                    <canvas id="pieChartExample"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 m-2">
+              <div class="card polar-chart-example">
+                <div class="card-header d-flex align-items-center">
+                  <h4>Result stats</h4>
+                </div>
+                <div class="card-body">
+                  <div class="chart-container">
+                    <canvas id="polarChartExample"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 m-2">
+              <div class="card radar-chart-example">
+                <div class="card-header d-flex align-items-center">
+                  <h4>Region performances</h4>
+                </div>
+                <div class="card-body">
+                  <div class="chart-container">
+                    <canvas id="radarChartExample"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- JavaScript files-->
+    <script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{url_for('static', filename='vendor/popper.js/umd/popper.min.js')}}"> </script>
+    <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/grasp_mobile_progress_circle-1.0.0.min.js')}}"></script>
+    <script src="{{url_for('static', filename='vendor/jquery.cookie/jquery.cookie.js')}}"> </script>
+    <script src="{{url_for('static', filename='vendor/chart.js/Chart.min.js')}}"></script>
+    <script src="{{url_for('static', filename='vendor/jquery-validation/jquery.validate.min.js')}}"></script>
+    <script src="{{url_for('static', filename='vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/charts-custom.js')}}"></script>
+    <!-- Main File-->
+    <script src="{{url_for('static', filename='js/front.js')}}"></script>
+{% endblock content %}
