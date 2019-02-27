@@ -4,7 +4,6 @@ from flaskblog.models import Post
 main = Blueprint('main', __name__)
 
 
-@main.route("/")
 @main.route("/home")
 def home():
     page = request.args.get('page', 1, type=int)
@@ -12,6 +11,7 @@ def home():
     return render_template('home.html', posts=posts)
 
 
+@main.route("/")
 @main.route("/about")
 def about():
     return render_template('landing.html', title='About')
