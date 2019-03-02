@@ -13,11 +13,14 @@ posts = Blueprint('posts', __name__)
 
 def numberToResult(iNumber, iYear, iExam):
     iSchoolnumber = iNumber[:5].lower()
-    iLink = "https://necta.go.tz/results/{year}/{exam}/results/{number}.htm".format(year=iYear, exam=iExam, number=iSchoolnumber)
+    iLink = "https://maktaba.tetea.org/exam-results/{exam}{year}/{number}.htm".format(year=iYear, exam=iExam.upper(), number=iSchoolnumber)
     request = requests.get(iLink)
     content = request.content
     soup = BeautifulSoup(content, "html.parser")
-    student = soup.find("font", string=iNumber.upper())
+    if (soup.find("font", string=iNumber.upper())):
+        student = soup.find("font", string=iNumber.upper())
+    else:
+        student = soup.find("font", string=iNumber[6:10].upper())
     studentReport = student.parent.parent
     studentResults = studentReport.find_all("font")
     studentNumber = studentResults[0].text
