@@ -1,16 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-    <link rel="stylesheet" href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="{{url_for('static', filename='vendor/font-awesome/css/font-awesome.min.css')}}">
-    <!-- Fontastic Custom icon font-->
-    <link rel="stylesheet" href="{{url_for('static', filename='css/fontastic.css')}}">
-    <!-- Google fonts - Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-    <!-- jQuery Circle-->
-    <link rel="stylesheet" href="{{url_for('static', filename='css/grasp_mobile_progress_circle-1.0.0.min.css')}}">
-    <!-- Custom Scrollbar-->
-    <link rel="stylesheet" href="{{url_for('static', filename='vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css')}}">
+
     <!-- theme stylesheet-->
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="{{url_for('static', filename='css/custom.css')}}">
@@ -24,11 +14,12 @@
           </ul>
         </div>
       </div>
+      <div>
       <section class="charts">
         <div class="container-fluid">
           <!-- Page Header-->
           <header>
-            <h1 class="h3 display">Charts</h1>
+            <h1 class="h3 display">Visualized data</h1>
           </header>
           <div class="row">
             <div class="col-lg-6 m-2 m-2">
