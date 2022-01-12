@@ -30,7 +30,7 @@ oauthlib==3.0.1
 pandas==0.24.0
 pdfkit==0.6.1
 Pillow==5.4.1
-pipenv==2018.11.26
+pipenv==2022.1.8
 pycparser==2.19
 pylint==2.2.2
 PySocks==1.6.8
