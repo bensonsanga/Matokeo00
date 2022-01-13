@@ -29,7 +29,7 @@ numpy==1.16.0
 oauthlib==3.0.1
 pandas==0.24.0
 pdfkit==0.6.1
-Pillow==5.4.1
+Pillow==9.0.0
 pipenv==2018.11.26
 pycparser==2.19
 pylint==2.2.2
